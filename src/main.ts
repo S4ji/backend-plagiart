@@ -7,7 +7,7 @@ async function bootstrap() {
     app.enableCors({
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         origin:
-            process.env.FRONT_URL || 'https://front-end-plagiart.vercel.app/',
+            process.env.FRONT_URL || 'https://front-end-plagiart.vercel.app',
         credentials: true,
     })
     app.useGlobalPipes(
