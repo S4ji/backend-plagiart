@@ -107,7 +107,7 @@ export class ImageController {
                     .replaceAll('.jpg', '')
                     .replaceAll('.webp', '')
                 return {
-                    url: `${process.env.FRONT_URL}/image/view/${route}/${cleanName}.avif`,
+                    url: `${process.env.API_URL}/image/view/${route}/${cleanName}.avif`,
                 }
             } catch (error) {
                 console.error(error)
