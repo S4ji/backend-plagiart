@@ -6,7 +6,7 @@ async function bootstrap() {
     const app = await NestFactory.create(AppModule)
     app.enableCors({
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-        origin: 'http://localhost:3000', // replace with your frontend URL/port
+        origin: process.env.FRONT_URL, // replace with your frontend URL/port
         credentials: true,
     })
     app.useGlobalPipes(
