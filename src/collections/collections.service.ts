@@ -296,6 +296,10 @@ export class CollectionsService {
     }
 
     async deleteCollection(id_collection: number) {
+        await this.prisma.oeuvres_Collections.deleteMany({
+            where: { id_collection },
+        })
+
         return this.prisma.collection.delete({
             where: { id_collection },
         })
