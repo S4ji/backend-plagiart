@@ -9,7 +9,7 @@ import {
     Query,
     ParseIntPipe,
 } from '@nestjs/common'
-import { CollectionsService } from './collections.service' // Adjust path as needed
+import { CollectionsService } from './collections.service'
 import { CollectionsDto } from './dto'
 
 @Controller('collections')

@@ -5,7 +5,7 @@ import { ValidationPipe } from '@nestjs/common'
 async function bootstrap() {
     const app = await NestFactory.create(AppModule)
     app.enableCors({
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
         origin:
             process.env.FRONT_URL || 'https://front-end-plagiart.vercel.app',
         credentials: true,

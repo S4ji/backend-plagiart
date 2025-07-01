@@ -14,22 +14,22 @@ import { RolesDto } from './dto/roles.dto'
 export class RolesController {
     constructor(private readonly rolesService: RolesService) {}
 
-    @Get('/all') // GET /roles/all
+    @Get('/all')
     getAllRoles() {
         return this.rolesService.getAllRoles()
     }
 
-    @Post('/new') // POST /roles/new
+    @Post('/new')
     createRole(@Body() dto: RolesDto) {
         return this.rolesService.createRole(dto)
     }
 
-    @Patch('/update') // PATCH /roles/update
+    @Patch('/update')
     editRole(@Body() dto: RolesDto) {
         return this.rolesService.editRole(dto)
     }
 
-    @Delete('/:id') // DELETE /roles/:id
+    @Delete('/:id')
     deleteRole(@Param('id') id: string) {
         return this.rolesService.deleteRole(id)
     }

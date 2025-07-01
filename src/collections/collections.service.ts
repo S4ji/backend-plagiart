@@ -214,7 +214,6 @@ export class CollectionsService {
                 },
             })
 
-            // ✅ Dédupliquer les œuvres par ID
             const seenIds = new Set()
             suggestions = matches
                 .map((m) => m.oeuvre)
@@ -275,7 +274,7 @@ export class CollectionsService {
                 return {
                     ...collection,
                     image: images,
-                    id_utilisateur, // <-- ajout ici
+                    id_utilisateur,
                 }
             })
         )

@@ -10,7 +10,7 @@ datasource db {
 
 model Role {
   id      String       @id  @default(uuid())
-  nom     String       @unique @db.VarChar(64) // ADMIN, UTILISATEUR, etc.
+  nom     String       @unique @db.VarChar(64) 
 
   utilisateurs Utilisateur[] 
 }
@@ -25,7 +25,7 @@ model Utilisateur {
   token              String       @db.VarChar(128)
   isActive           Boolean
   image              String?      @db.VarChar(200)
-  biographie         String?      @db.Text        // Optional for users who are artists
+  biographie         String?      @db.Text        
   style_artistique   String?      @db.VarChar(128)
 
   created_at         DateTime     @default(now())
@@ -46,12 +46,12 @@ model Utilisateur {
 model Categorie {
   id_categorie Int       @id @default(autoincrement())
   nom          String    @db.VarChar(128)
-  id_parent    Int?      // Nullable for top-level categories
+  id_parent    Int?      
   path         String?    @db.VarChar(100)
 
   parent       Categorie? @relation("CategorieParent", fields: [id_parent], references: [id_categorie])
   children     Categorie[] @relation("CategorieParent")
-  oeuvres      Oeuvres_Categories[] // Many-to-many relation with Oeuvre
+  oeuvres      Oeuvres_Categories[] 
 }
 
 model Collection {
@@ -64,7 +64,7 @@ model Collection {
   updated_at     DateTime     @updatedAt()
 
   utilisateur    Utilisateur @relation(fields: [id_utilisateur], references: [id_utilisateur])
-  oeuvres        Oeuvres_Collections[] // Many-to-many relation with Oeuvre
+  oeuvres        Oeuvres_Collections[] 
 }
 
 model Likes {
